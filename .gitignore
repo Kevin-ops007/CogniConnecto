@@ -1,0 +1,17 @@
+# Dependency directories
+/frontend/node_modules
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build files
+/frontend/build
+/frontend/dist
+
+# Cache and Log files
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
