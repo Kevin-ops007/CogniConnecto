@@ -11,7 +11,9 @@ function Events() {
   const [state, setState] = useState(null);
   useEffect(() => {
     const fetchEvents = async () => {
-      let result = await axios.get(`http://127.0.0.1:8000/api/clubs/allclubs`);
+      let result = await axios.get(
+        `http://127.0.0.1:8000/api/events/allevents`
+      );
 
       setEvents(JSON.parse(JSON.stringify(result.data)));
       setState("Done");
@@ -26,7 +28,7 @@ function Events() {
           {state === "Done" &&
             events.map((event) => (
               <Col md={3} xs={6} className="mb-4" key={event.uuid}>
-                <EventCard uid={event.uuid} {...club} />
+                <EventCard uid={event.uuid} {...event} />
               </Col>
             ))}
         </Row>
