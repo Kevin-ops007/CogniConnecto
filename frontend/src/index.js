@@ -8,7 +8,7 @@ import JobPage from './Components/Jobs/JobPage';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
@@ -19,5 +19,3 @@ root.render(
     </Routes>
   </BrowserRouter>
 );
-
-

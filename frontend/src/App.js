@@ -1,12 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
-import JobDetails from "./Components/Jobs/JobDetails";
+import React from "react";
+import JobButton from "./Components/Buttons/JobButton";
 
 function App() {
   return (
     <div className="App">
       <h1>job</h1>
-      <JobDetails />
+      <JobButton />
     </div>
   );
 }
