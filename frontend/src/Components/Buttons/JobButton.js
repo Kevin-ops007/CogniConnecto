@@ -1,11 +1,13 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const JobDetails = () => {
   return (
     <>
       <h1>Job Details</h1>
-      <Button variant="primary">Apply</Button>
+      <Link to="/jobinfo" className="btn btn-primary">
+        Details
+      </Link>
     </>
   );
 };
