@@ -135,8 +135,9 @@ async def get_jobs():
             "Location": "Winnipeg, MB",
             "Description": "Responsibilities include feeding, grooming, and providing basic care for shelter animals, as well as assisting with cleaning and organizing animal areas. Send your resume to shelter@gmail.com.",
             "Disability_Type": "Autism, Intellectual Disability",
-            "uuid": "5"
+            "uuid": "5" 
         }
+        
     ]
     json_data = json.dumps(fakeJobs)
     return json.loads(json_data)
