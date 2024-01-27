@@ -37,4 +37,4 @@ function Header() {
         </Navbar>
     );
 }
-export default Navigation;
+export default Header;
