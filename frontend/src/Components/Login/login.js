@@ -3,7 +3,6 @@ import "./login.css"; // Import CSS file for styling
 import { useNavigate, Navigate } from "react-router-dom";
 // import Home from "../Home/Home";
 import Form from 'react-bootstrap/Form';
-import Logo from './Logo3.png';
 import Button from "react-bootstrap/esm/Button";
 
 const Login = () => {
