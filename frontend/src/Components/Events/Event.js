@@ -27,7 +27,7 @@ function Events() {
                 <Row auto>
                     {state === "Done" && events.map(event => (
                         <Col md={3} xs={6} className="mb-4" key={event.uuid}>
-                            <EventCard uid={event.uuid} {...event} />
+                            <EventCard key={event.uuid} {...event} />
                         </Col>
                     ))}
                 </Row>
