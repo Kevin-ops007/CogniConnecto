@@ -1,12 +1,13 @@
 import "./App.css";
 import React from "react";
-import JobButton from "./Components/Buttons/JobButton";
+// import JobButton from "./Components/Buttons/JobButton";
+import Login from "./Components/Login/login";
 
 function App() {
   return (
     <div className="App">
-      <h1>job</h1>
-      <JobButton />
+      
+      <Login />
     </div>
   );
 }
