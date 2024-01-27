@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 import Collapse from "react-bootstrap/Collapse";
 
 const SingleCard = (prop) => {
-    const uid = prop.uuid.toString().padStart(4, "0");
-    console.log(uuid);
+    const uuid = prop.uuid.toString().padStart(4, "0");
+    const [open, setOpen] = React.useState(false);
 
     return (
-        <Card style={{ width: "18rem" }}>
+        <Card >
             <Card.Img
+                style={{ height: 250 }}
                 variant="top"
                 src={prop.img}></Card.Img>
             <Card.Body>
@@ -32,8 +33,8 @@ const SingleCard = (prop) => {
                     </div>
                 </Collapse>
             </Card.Body>
-            <Card.Footer>
-                <small className="text-muted">{prop.TIME}</small>
+            <Card.Footer className="text-muted text-center">
+                {prop.time}
             </Card.Footer>
         </Card >
     );
