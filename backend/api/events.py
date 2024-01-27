@@ -26,7 +26,7 @@ async def get_events():
         {
             "event": "Cognitive Connections Expo",
             "type": "Autism, Rett Syndrome, Williams Syndrome",
-            "image": "/images/autism.jpg",
+            "image": "https://www.healthparkpediatrics.com/wp-content/uploads/2022/02/AdobeStock_256979830.jpeg",
             "date": "2024-03-25",
             "time": "14:00",
             "location": "123 Main St",
@@ -37,7 +37,7 @@ async def get_events():
         {
             "event": "Diverse Minds Conference",
             "type": "Rett Syndrome, Intellectual Disability, Down Syndrome",
-            "image": "/images/rett_syndrome.jpg",
+            "image": "https://www.adjtos.ca/en/news/resources/Images/RETT-Syndrome-Awareness-Month-Image.jpg",
             "date": "2024-10-26",
             "time": "15:00",
             "location": "431 Old St",
@@ -48,7 +48,7 @@ async def get_events():
         {
             "event": "AccessAbility Forum",
             "type": "Williams Syndrome, Autism, Down Syndrome",
-            "image": "images/williams_syndrome.jpg",
+            "image": "https://www.toplinemd.com/pemc-florida/wp-content/uploads/sites/111/2022/12/What-Is-Williams-Syndrome.jpg",
             "date": "2024-05-21",
             "time": "16:00",
             "location": "321 Zellar St",
@@ -59,7 +59,7 @@ async def get_events():
         {
             "event": "Minds Unlocked Conference",
             "type": "Intellectual Disability, Down Syndrome, Williams Syndrome",
-            "image": "images/intellectual_disability.jpg",
+            "image": "https://t4.ftcdn.net/jpg/00/88/59/13/360_F_88591324_z1gGX9gZryHQhzGAd8vwIm1mwtyyAP50.jpg",
             "date": "2024-06-25",
             "time": "17:00",
             "location": "343 Pembina St",
@@ -70,7 +70,7 @@ async def get_events():
         {
             "event": "Inclusive Minds Symposium",
             "type": "Down Syndrome, Autism, Intellectual Disability",
-            "image": "images/down_syndrome.jpg",
+            "image": "https://images.squarespace-cdn.com/content/v1/630cad6959694e36cb854121/febb6b18-57c3-4b58-873e-833b45adf7b9/Tshirts_01.jpg",
             "date": "2024-07-29",
             "time": "18:00",
             "location": "192 Victoria St",
