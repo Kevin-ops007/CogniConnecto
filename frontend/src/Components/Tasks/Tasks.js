@@ -4,8 +4,15 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Toast from 'react-bootstrap/Toast';
 import Header from "../Header/Header";
+import Container from "react-bootstrap/Container";
+import Modal from 'react-bootstrap/Modal';
 
 function Tasks() {
+        const [show, setShow] = useState(false);
+        const [modealinputTitile, setModealinputTitle] = useState("");
+        const [modealinputDesc, setModealinputDesc] = useState("");
+        const [modealinputDate, setModealinputDate] = useState("");
+
         const [IDs, setIDs] = useState([
             "1",
             "2",
@@ -63,16 +70,88 @@ function Tasks() {
             
             setIDs(new_IDs);
         }
+
+        const handleClose = () => setShow(false);
+        const handleShow = () => setShow(true);
+
+        const CreateTask = () => {
+            let old_IDs = [...IDs];
+            const new_ID = old_IDs.length + 1;
+            const new_IDs = [...old_IDs, String(new_ID)];
+            setIDs(new_IDs);
+
+            let new_object = {...tasks};
+            new_object[new_ID] = {
+                "id": String(new_ID),
+                "name": modealinputTitile,
+                "description": modealinputDesc,
+                "date": modealinputDate,
+                "time": "13:00",
+                "completed": false,
+                "show": true
+            };
+            setTasks(new_object);
+            setModealinputDate("");
+            setModealinputDesc("");
+            setModealinputTitle("");
+            setShow(false);
+        }
+
+        const handleChangeTitle = (event) => {
+            setModealinputTitle(event.target.value);
+        };
+
+        const handleChangeDesc = (event) => {
+            setModealinputDesc(event.target.value);
+        };
+
+        const handleChangeDate = (event) => {
+            setModealinputDate(event.target.value);
+        };
       
         return (
             <>
              <Header />
+             
+             <>
+                
+
+                <Modal show={show} onHide={handleClose} animation={false}>
+                    <Modal.Header closeButton>
+                    <Modal.Title>Create a task</Modal.Title>
+                    </Modal.Header>
+                    <>
+                        <h3>Title</h3>
+                        <input onChange={handleChangeTitle}/>
+                    </>
+                    
+                    <>
+                        <h3>Description</h3>
+                        <input onChange={handleChangeDesc}/>
+                    </>
+                    
+                    <>
+                        <h3>Due Date</h3>
+                        <input onChange={handleChangeDate}/> 
+                    </>
+                    
+
+                    <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Cancel
+                    </Button>
+                    <Button variant="primary" onClick={CreateTask}>
+                        Create Task
+                    </Button>
+                    </Modal.Footer>
+                </Modal>
+            </>
+
             {IDs.map((task_id) => (
-            <Row key={task_id}>
+            <Container fluid> 
+            <Row className="justify-content-md-center" key={task_id}>
             <Col md={6} className="mb-2">
-              <Button onClick={() =>{toggleShowA(task_id)}} className="mb-2">
-                {tasks[task_id].name}
-              </Button>
+              <Button onClick={() =>{toggleShowA(task_id)}} variant="outline-dark">{tasks[task_id].name}</Button>
               <Toast onClose={() =>{toggleShowA(task_id)}} show={tasks[task_id].show} animation={false}>
                 <Toast.Header>
                   <img
@@ -87,8 +166,16 @@ function Tasks() {
                 <Button variant="outline-danger" size="sm" onClick={()=>{DeleteTask(task_id)}}>Delete Task</Button>{' '}
               </Toast>
             </Col>
-            </Row>))
+            
+            </Row>
+            </Container>
+            ))
             }
+            <Container fluid> 
+            <Row className="justify-content-md-center">
+                <Button className="justify-content-md-center" variant="primary" onClick={handleShow}>Add Task</Button>{' '}
+            </Row>   
+            </Container>
         
         </>
           
