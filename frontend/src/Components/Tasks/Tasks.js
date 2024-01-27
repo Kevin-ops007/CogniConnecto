@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -14,50 +14,24 @@ function Tasks() {
         const [modealinputDate, setModealinputDate] = useState("");
 
         const [IDs, setIDs] = useState([
-            "1",
-            "2",
-            "3",
-            "4",
         ]);
         const [tasks, setTasks] = useState({
-            "1":{
-                "id": "1",
-                "name": "Task 1",
-                "description": "Description 1",
-                "date": "2021-10-01",
-                "time": "10:00",
-                "completed": false,
-                "show": true
-            },
-            "2":{
-                "id": "2",
-                "name": "Task 2",
-                "description": "Description 2",
-                "date": "2021-10-02",
-                "time": "11:00",
-                "completed": false,
-                "show": true
-            },
-            "3":{
-                "id": "3",
-                "name": "Task 3",
-                "description": "Description 3",
-                "date": "2021-10-03",
-                "time": "12:00",
-                "completed": false,
-                "show": true
-            },
-            "4":{
-                "id": "4",
-                "name": "Task 4",
-                "description": "Description 4",
-                "date": "2021-10-04",
-                "time": "13:00",
-                "completed": false,
-                "show": true
-            },
         });
-      
+        useEffect(() => {
+            let formattedTasks = JSON.stringify(tasks);
+            localStorage.setItem("Tasks", formattedTasks);
+
+            let formattedIDs = JSON.stringify(IDs);
+            localStorage.setItem("IDs", formattedIDs);
+            //console.log(tasks)
+            console.log("******************");
+
+             //window.addEventListener("beforeunload", () => {
+                // Clear the "questionSet" from localStorage when the user closes the page
+                //localStorage.removeItem("Tasks");
+             //});
+        }, []);
+
         const toggleShowA = (id) => {
             let new_object = {...tasks};
             new_object[id].show = !new_object[id].show;
@@ -109,13 +83,11 @@ function Tasks() {
             setModealinputDate(event.target.value);
         };
       
+
         return (
             <>
              <Header />
-             
              <>
-                
-
                 <Modal show={show} onHide={handleClose} animation={false}>
                     <Modal.Header closeButton>
                     <Modal.Title>Create a task</Modal.Title>
