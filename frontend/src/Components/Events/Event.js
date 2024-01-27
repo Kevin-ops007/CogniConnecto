@@ -7,33 +7,32 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 function Events() {
-    const [events, setEvents] = useState(null)
-    const [state, setState] = useState(null)
-    useEffect(() => {
-        const fetchEvents = async () => {
-            let result = await axios.get(
-                `http://127.0.0.1:8000/api/clubs/allclubs`,
-            );
+  const [events, setEvents] = useState(null);
+  const [state, setState] = useState(null);
+  useEffect(() => {
+    const fetchEvents = async () => {
+      let result = await axios.get(`http://127.0.0.1:8000/api/clubs/allclubs`);
 
-            setEvents(JSON.parse(JSON.stringify(result.data)))
-            setState("Done")
-        }
-        fetchEvents()
-    }, [])
+      setEvents(JSON.parse(JSON.stringify(result.data)));
+      setState("Done");
+    };
+    fetchEvents();
+  }, []);
 
-    return (
-        <div>
-            <Container fluid>
-                <Row auto>
-                    {state === "Done" && events.map(event => (
-                        <Col md={3} xs={6} className="mb-4" key={event.uuid}>
-                            <EventCard uid={event.uuid} {...club} />
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
-        </div>
-    );
+  return (
+    <div>
+      <Container fluid>
+        <Row auto>
+          {state === "Done" &&
+            events.map((event) => (
+              <Col md={3} xs={6} className="mb-4" key={event.uuid}>
+                <EventCard uid={event.uuid} {...club} />
+              </Col>
+            ))}
+        </Row>
+      </Container>
+    </div>
+  );
 }
 
 export default Cards;

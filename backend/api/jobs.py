@@ -39,7 +39,7 @@ async def get_jobs():
             "Description": "Tasks include food preparation, serving customers, and maintaining kitchen hygiene. Send your resume to tastybitescafe@gmail.com.",
             "Disability Type": "Intellectual Disability, Down Syndrome",
             "uuid": "2"
-        }
+        },
 
         {
             "Job Title": "Library Aide",
@@ -48,7 +48,7 @@ async def get_jobs():
             "Description": "Responsibilities include shelving books, assisting patrons, and organizing library materials. Send your resume to royallibrary@gmail.com.",
             "Disability Type": "Autism, Intellectual Disability",
             "uuid": "3"
-        }
+        },
 
 
         {
@@ -58,7 +58,7 @@ async def get_jobs():
             "Description": "Duties include assisting customers with plant selection, watering plants, and maintaining garden displays. Send your resume to greenthumbgardensupplies@gmail.com.",
             "Disability Type": "Down Syndrome",
             "uuid": "4"
-        }
+        },
 
 
         {

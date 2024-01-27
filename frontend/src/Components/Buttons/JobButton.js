@@ -1,15 +1,20 @@
+import JobDetails from "../Jobs/JobDetails";
+import Button from "react-bootstrap/Button";
 import React from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
-const JobDetails = () => {
+const JobButton = () => {
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <>
-      <h1>Job Details</h1>
-      <Link to="/jobinfo" className="btn btn-primary">
-        Details
-      </Link>
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+        More
+      </Button>
+
+      <JobDetails show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
 };
 
-export default JobDetails;
+export default JobButton;
