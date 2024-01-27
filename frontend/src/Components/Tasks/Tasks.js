@@ -57,21 +57,7 @@ function Tasks() {
                 "show": true
             },
         });
-        
-        useEffect(() => {
-            let formattedTasks = JSON.stringify(tasks);
-            localStorage.setItem("Tasks", formattedTasks);
 
-            let formattedIDs = JSON.stringify(IDs);
-            localStorage.setItem("IDs", formattedIDs);
-            //console.log(tasks)
-            console.log("******************");
-
-             //window.addEventListener("beforeunload", () => {
-                // Clear the "questionSet" from localStorage when the user closes the page
-                //localStorage.removeItem("Tasks");
-             //});
-        }, []);
 
         const toggleShowA = (id) => {
             let new_object = {...tasks};
