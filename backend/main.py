@@ -1,6 +1,6 @@
 
-from fastapi import FastAPI, HTTPException
-from api import events
+from fastapi import FastAPI, HTTPException, Request
+from api import events,jobs,tasks
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -16,8 +16,8 @@ app.add_middleware(
 )
 
 app.include_router(events.router)
-
-
+app.include_router(jobs.router)
+app.include_router(tasks.router)
 
 @app.get("/")
 async def read_root():
