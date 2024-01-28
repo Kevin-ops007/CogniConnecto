@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./login.css"; // Import CSS file for styling
 import { useNavigate, Navigate } from "react-router-dom";
 // import Home from "../Home/Home";
-import Form from 'react-bootstrap/Form';
+import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
 
 const Login = () => {
@@ -23,6 +23,7 @@ const Login = () => {
     // Check if username and password match the fake credentials
     if (username === fakeUsername && password === fakePassword) {
       setLoginStatus("Login successful");
+      setLoginError(false);
       navigate("./events", { replace: true });
       // Perform further actions, such as redirecting to a different page
     } else {
@@ -67,45 +68,12 @@ const Login = () => {
         />
         {loginError && <p className="error">Invalid username or password</p>}
         {loginStatus && <p className="status">{loginStatus}</p>}
-       <Button
-       classname="mt-3"
-       variant = "primary"
-                    onClick={handleSubmit}>
-                      Submit
-                    </Button>
+        <Button classname="mt-3" variant="primary" onClick={handleSubmit}>
+          Submit
+        </Button>
       </form>
     </div>
   );
-  // return (
-  //   <div className="login-page" style={{ textAlign: 'center' }}>
-  //     <img src={Logo} alt="CogniConnecto Logo" />
-  //     {/* <h2>CogniConnecto</h2> */}
-  //     <form onSubmit={handleSubmit} style={{ display: 'inline-block' }}>
-  //       <div>
-  //         <label htmlFor="username">Username:</label>
-  //         <input
-  //           type="text"
-  //           id="username"
-  //           value={username}
-  //           onChange={(e) => setUsername(e.target.value)}
-  //         />
-  //       </div>
-  //       <div>
-  //         <label htmlFor="password">Password:</label>
-  //         <input
-  //           type="password"
-  //           id="password"
-  //           value={password}
-  //           onChange={(e) => setPassword(e.target.value)}
-  //         />
-  //       </div>
-  //       {loginError && <p className="error">Invalid username or password</p>}
-  //       {loginStatus && <p className="status">{loginStatus}</p>}
-  //       <button type="submit">Login</button>
-  //     </form>
-  //   </div>
-  // );
-  
-}
+};
 
 export default Login;
